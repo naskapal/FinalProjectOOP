@@ -12,7 +12,9 @@ if (Input::get("editAdmin") != null)
 
   if ($_admin->update_admin($editedValues,Input::get('username')))
   {
-    echo "<script> alert('Edit Success'); location.href = 'admin-page.php?cek=user';
+    echo "<script> 
+    	alert('Edit Success'); 
+    	location.href = 'admin-page.php?cek=user';
     </script>";
   }
 
