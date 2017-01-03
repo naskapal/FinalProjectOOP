@@ -14,7 +14,7 @@
 function del( id ){
   var confirmation = confirm("delete?");
   if( confirmation == true )
-    window.location = "deleteEvent.php?jobID="+ id;
+    window.location = "deleteEvent.php?eventID="+ id;
   else
     return false;
 }

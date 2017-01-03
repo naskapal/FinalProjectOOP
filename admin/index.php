@@ -25,7 +25,7 @@
         if($_admin->login_admin(Input::get('username'), Input::get('password')))
         {
           Session::set('username', Input::get('username'));
-          header('location: admin-page.php');
+          header('location: admin-hello.php');
         }else{
           echo "<script>alert('Login Failed');</script>";
         }
