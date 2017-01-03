@@ -17,8 +17,10 @@ class Admin{
 
   public function update_admin($fields = array(), $id)
   {
-    if($this->_db->update('administrator', $fields, $id, 'username')) return true;
-    else return false;
+    if($this->_db->update('administrator', $fields, $id, 'username')) 
+      return true;
+    else 
+      return false;
   }
 
   public function is_LoggedIn()

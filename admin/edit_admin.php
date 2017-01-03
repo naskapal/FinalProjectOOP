@@ -10,7 +10,8 @@ if(!$_admin->is_LoggedIn()){
     <!-- Page Heading/Breadcrumbs -->
     <div class="row">
         <div class="col-lg-6">
-            <form action="saveEdit.php" method="POST">
+            <form action="saveEdit.php?editAdmin=true" method="POST">
+            <input type="hidden" name="username" value="<?php echo $adminDetails['username']; ?>" />
             <table align="center" class="table table-bordered table-hover">
             <tr>
                 <td colspan="3" align="center">User Data</td>
@@ -41,14 +42,12 @@ if(!$_admin->is_LoggedIn()){
                     <option value='academic' selected>academic</option>";
                   }
                    ?>
-
-
                 </select>
                 </td>
             </tr>
             <tr>
                 <td colspan="3" align="right">
-                    <input type="submit" onclick='return edit("<?php echo $adminDetails['adminID']; ?>")' name="editAdmin" value="Edit">
+                    <input type="submit" onclick='return edit("<?php echo $adminDetails['username']; ?>")' name="editAdmin" value="Edit">
                 </td>
             </tr>
             </table>

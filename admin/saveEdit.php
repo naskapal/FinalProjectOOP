@@ -7,9 +7,7 @@ if(!$_admin->is_LoggedIn()){
 
 if (Input::get("editAdmin") != null)
 {
-  $editedValues = array('adminID' => Input::get('adminID'),
-                        'username'=> Input::get('username'),
-                        'access'=>Input::get('access'));
+  $editedValues = array( 'access' => Input::get('access') );
 
   if ($_admin->update_admin( $editedValues , Input::get('username')))
   {
