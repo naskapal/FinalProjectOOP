@@ -1,6 +1,7 @@
 <?php
 require('config.php');
-  require_once MYFOLDER_PATH."/core/init.php";
+  
+  // Config::loadCore('init');
 
   $errors = array();
 
