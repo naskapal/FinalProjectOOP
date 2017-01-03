@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT']."/core/init_inside.php";
+<?php require('../config.php');
 include_once '../assets/adminHeader.php';
 if(!$_admin->is_LoggedIn()){
     header('location: adminLogin.php');
@@ -48,7 +48,7 @@ if(!$_admin->is_LoggedIn()){
             </tr>
             <tr>
                 <td colspan="3" align="right">
-                <input type="submit" onclick='return edit(<?php $adminDetails['username']; ?>)' name="editAdmin" value="Edit">
+                    <input type="submit" onclick='return edit("<?php echo $adminDetails['adminID']; ?>")' name="editAdmin" value="Edit">
                 </td>
             </tr>
             </table>

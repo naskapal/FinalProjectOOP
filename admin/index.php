@@ -1,5 +1,5 @@
 <?php
-  require_once $_SERVER['DOCUMENT_ROOT']."/core/init_inside.php";
+  require('../config.php');
 
   $errors = array();
 

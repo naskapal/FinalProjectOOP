@@ -1,17 +1,12 @@
 <?php
-
-require_once $_SERVER['DOCUMENT_ROOT']."/core/init_inside.php";
+require( '../config.php' );
+// Config::loadCore( 'init_inside' );
 
 if(!$student->is_LoggedIn()){
     header('location: ../login.php');
 }
 
 $result = $_club->club_list();
-
-
-
-
-
 
 require_once "../templates/header_student.php";
  ?>

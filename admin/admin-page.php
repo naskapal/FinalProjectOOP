@@ -1,6 +1,7 @@
-<?php include_once '../assets/adminHeader.php';
+<?php 
+require('../config.php');
+include_once '../assets/adminHeader.php';
 
-  include_once '../core/init_inside.php';
   if(!$_admin->is_LoggedIn()){
       header('location: adminLogin.php');
   }
@@ -11,27 +12,29 @@
                     <div class="col-lg-12">
                         <?php
 //                        include "../checkAdmin.php";
-                        $cek=$_GET['cek'];
-                        if($_GET['cek']=="user")
+                        $cek = isset($_GET['cek']) ? $_GET['cek'] : 'telolet';
+
+                        if($cek =="user")
                         {
-                            include"view-user.php";
+                            include "view-user.php";
                             }
-                        elseif($_GET['cek']=="event")
+                        elseif($cek=="event")
                         {
-                            include"view-event.php";
+                            include "view-event.php";
                             }
-                        elseif($_GET['cek']=="generate")
+                        elseif($cek=="generate")
                         {
-                            include"generate.php";
+                            include "generate.php";
                             }
-                        elseif($_GET['cek']=="input")
+                        elseif($cek=="input")
                         {
-                            include"form-user.php";
+                            include "form-user.php";
                             }
-                        elseif($_GET['cek']=="trans")
+                        elseif($cek=="trans")
                         {
-                            include"view-transaction.php";
-                            }
+                            include "view-transaction.php";
+                        }
+                        else{}
 		              ?>
                     </div>
                 </div>

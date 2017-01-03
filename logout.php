@@ -1,6 +1,6 @@
 <?php
-
-require_once $_SERVER['DOCUMENT_ROOT']."/core/init.php";
+require('config.php');
+require_once MYFOLDER_PATH."/core/init.php";
 session_destroy();
 Redirect::to('login');
 

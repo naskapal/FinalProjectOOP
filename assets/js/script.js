@@ -20,7 +20,7 @@ function del( id ){
 }
 
 function edit(username){
-  var confirmation = confirm("confirm edit"+username+"?");
+  var confirmation = confirm("confirm edit "+username+"?");
   if (confirmation == true)
   window.location = "saveEdit.php?username="+username;
   else return false;

@@ -1,6 +1,6 @@
 <?php
-
-require_once $_SERVER['DOCUMENT_ROOT']."/core/init_inside.php";
+require('../config.php');
+require_once MYFOLDER_PATH ."/core/init_inside.php";
 
 if(!$student->is_LoggedIn()){
     header('location: ../login.php');
