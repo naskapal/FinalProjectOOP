@@ -1,5 +1,5 @@
 <?php
-  require_once "core/init.php";
+  require_once $_SERVER['DOCUMENT_ROOT']."/core/init.php";
 
   $errors = array();
 
@@ -24,21 +24,31 @@
                   )
     ));
 
+
     if($student->cek_name(Input::get('username'))){
         echo "<script>alert('Username already Used!')</script>";
     }else{
           if($validation->passed()){
+
+            $name = $_FILES['image']['name'];
+            $asal = $_FILES['image']['tmp_name'];
+
+            move_uploaded_file($asal,'assets/img/profile/'.$name);
+
             $student->register_student(array(
               'NIM' => Input::get('NIM'),
               'name' => Input::get('name'),
               'username' => Input::get('username'),
               'password' => password_hash(Input::get('password'),PASSWORD_DEFAULT),
               'address' => Input::get('address'),
-              'phone' => Input::get('phone')
+              'phone' => Input::get('phone'),
+              'walletBalance' => 0,
+              'skkm_point' => 0,
+              'studentPhoto' => $name
             ));
 
-            session::flash('profile', 'Welcome to SCEMS, you are succesfully registered');
-            session::set('username', Input::get('username'));
+            Session::flash('profile', 'Welcome to SCEMS, you are succesfully registered');
+            Session::set('username', Input::get('username'));
             Redirect::to('student/student_page');
           }else {
             $errors = $validation->errors();
@@ -54,7 +64,7 @@
 <div class="row">
   <div class="col-lg-12">
     <h2 style="text-align:center">Registration Form</h2>
-    <form action="index.php" method="post">
+    <form action="index.php" method="post" enctype="multipart/form-data">
       <div class="col-lg-6 fontLora col-md-offset-3">
         <div class="form-group">
           <label>NIM(Student ID)</label>
@@ -89,6 +99,11 @@
         <div class="form-group">
           <label>Phone</label>
           <input class="form-control" placeholder="Username" name="phone">
+        </div>
+
+        <div class="form-group">
+          <label>Photo</label>
+          <input type="file" class="form-control"  name="image">
         </div>
 
 

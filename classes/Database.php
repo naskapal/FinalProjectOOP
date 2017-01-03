@@ -9,7 +9,7 @@ class Database
   private $mysqli,
           $HOST   = 'localhost',
           $USER   = 'root',
-          $PASS   = '',
+          $PASS   = 'tjpdp0gjdaw',
           $DBNAME = 'SCEM2';
 
   function __construct()
@@ -49,7 +49,7 @@ class Database
 
     $query = "INSERT INTO $table ($column) VALUES ($values)";
 
-
+    // die($query);
 
     return $this->run_query($query, 'Input Failed!');
   }
@@ -78,6 +78,7 @@ class Database
           $query .= ' AND '.$and;
         }
 
+
         return $this->mysqli->query($query);
 
     }
@@ -101,7 +102,7 @@ class Database
 
     $query = "UPDATE $table SET $values WHERE $primary=$id";
 
-    // die($query);
+    die($query);
 
     return $this->run_query($query, 'Update Failed!');
   }
@@ -115,7 +116,7 @@ class Database
     }
 
     $query = "DELETE FROM $table WHERE $column = $value";
-    // die($query);
+    die($query);
     return $this->run_query($query, 'Delete Failed!');
   }
 

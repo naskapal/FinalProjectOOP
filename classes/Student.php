@@ -65,12 +65,39 @@ class Student{
 
   public function cek_transaction($nim, $event)
   {
-    //not finished
     $value = 'nim = "'.$nim.'"';
     $event = 'eventID = "'.$event.'"';
 
-    if($this->_db->select('tickettrans','*',NULL, $value, NULL, 1,NULL, $event)) return true;
-    else return false;
+
+    $result = $this->_db->select('tickettrans','*',NULL, $value, NULL, NULL, $event);
+    while($row = $result->fetch_assoc())
+    {
+      $row;
+      if(empty($row['transID']))
+      {
+        return false;
+      }
+      else{
+        return true;
+      }
+    }
+
+  }
+
+  public function test()
+  {
+    $nim = 'e1200121';
+    $event = 'HSM';
+
+    $value = 'nim = "'.$nim.'"';
+    $event = 'eventID = "'.$event.'"';
+
+
+    $result = $this->_db->select('tickettrans','*',NULL, $value, NULL, NULL, $event);
+    while($row = $result->fetch_assoc())
+    {
+      return $row;
+    }
   }
 
 

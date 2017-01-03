@@ -2,44 +2,54 @@
 
 require_once $_SERVER['DOCUMENT_ROOT']."/core/init_inside.php";
 
-if(!$_student->is_LoggedIn()){
+if(!$student->is_LoggedIn()){
     header('location: ../login.php');
 }
 
 $id         = $_GET['eventID'];
-$user_data  = $_student->get_data(session::get('username'));
+$user_data  = $student->get_data(Session::get('username'));
 $data       = $_event->event_details($id);
 $ticket     = $_event->ticket_details($id);
+
 
 if(Input::get('submit'))
 {
   $nominal = $_event->get_price($id);
-    if(!$_student->cek_transaction($user_data['nim'],$data['eventID']))
+  if(empty($ticket['ticketID']))
+  {
+    echo "<script>alert('Ticket Sold Out')</script>";
+    Redirect::to('event_list');
+  }
+  else {
+    if($student->cek_transaction($user_data['nim'],$data['eventID']))
     {
-          if($user_data['walletBalance'] >= $nominal )
-          {
-            $_student->transaction(array(
-              'transID'   => NULL,
-              'ticketID'  => $ticket['ticketID'],
-              'transDate' => date(y/m/d),
-              'nim'       => $user_data['nim'],
-              'eventID'   => $data['eventID']
-            ));
-
-            $_admin->delete_ticket($ticket['ticketID']);
-
-            $_student->update_student(array(
-              'walletBalance' => $user_data['walletBalance'] - $nominal
-            ),$user_data['nim']);
-
-              Redirect::to('profile');
-          }else {
-            echo "<script>alert('Your Wallet is not enough')</script>";
-          }//end cek balance
-    }//end cek already buy
-    else{
-      echo "<script>alert('You already buy the ticket')</script>";
+          echo "<script>alert('You already buy the ticket')</script>";
     }
+    else{
+      if($user_data['walletBalance'] >= $nominal )
+      {
+        $point = $_event->get_point($id);
+
+        $student->update_student(array(
+          'walletBalance' => $user_data['walletBalance'] - $nominal,
+          'skkm_point' => $user_data['skkm_point'] + $point
+        ),$user_data['nim']);
+
+        $student->transaction(array(
+          'ticketID'  => $ticket['ticketID'],
+          'transDate' => date("y,m,d"),
+          'nim'       => $user_data['nim'],
+          'eventID'   => $data['eventID']
+        ));
+
+          $_admin->delete_ticket($ticket['ticketID']);
+
+          Redirect::to('profile');
+      }else {
+        echo "<script>alert('Your Wallet is not enough')</script>";
+      }//end cek balance
+    }//end cek already buy
+  }//end sold out
 }
 
 require_once "../templates/header_student.php";
@@ -69,7 +79,7 @@ require_once "../templates/header_student.php";
 
            <div class="col-md-8">
 
-               <img class="img-responsive img-hover" src="<?php echo '../assets/img/event/'.$data['imagePath'].'.jpg';?>" alt="">
+               <img class="img-responsive img-hover" src="<?php echo '../assets/img/event/'.$data['imagePath'];?>" alt="">
 
            </div>
 

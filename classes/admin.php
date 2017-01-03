@@ -101,7 +101,6 @@ class Admin{
   }
   public function insert_top_up($fields = array())
   {
-    var_dump($fields);
     if($this->_db->insert('topup', $fields)) return true;
     else return false;
   }

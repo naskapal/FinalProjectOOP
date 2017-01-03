@@ -2,7 +2,7 @@
 
 require_once $_SERVER['DOCUMENT_ROOT']."/core/init_inside.php";
 
-if(!$_student->is_LoggedIn()){
+if(!$student->is_LoggedIn()){
     header('location: ../login.php');
 }
 
@@ -35,7 +35,7 @@ require_once "../templates/header_student.php";
 
            <div class="col-md-4">
 
-               <img class="img-responsive img-hover center-block" src="<?php echo '../assets/img/profile/'.$profile['studentPhoto'].'.jpg';?>" alt="gambar">
+               <img class="img-responsive img-hover center-block" src="<?php echo '../assets/img/profile/'.$profile['studentPhoto'];?>" alt="gambar">
 
            </div>
 

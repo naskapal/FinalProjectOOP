@@ -36,22 +36,16 @@ if(!$_admin->is_LoggedIn()){
 
        <!-- Projects Row -->
        <div class="row">
-				 <div class="demo">
 
-					 <?php
-               if($adminList ->num_rows > 0){
-                 while($row = $adminList->fetch_assoc()){
- 									echo "<tr>";
- 									echo "<td>".$row['adminID']."</td>";
- 									echo "<td>".$row['username']."</td>";
- 									echo "<td>".$row['access']."</td>";
- 									echo "<td> <a href = edit_admin.php?username=".$row['username'].">edit</a></td>"; //edit tradisional
- 								// 	echo "<td><input type='submit' onclick='return editAjax()' name='edit' value='edit'></td>"; //to be edited
- 									echo "</tr>";?>
-
-				 </div>
-
-
+          <?php
+              if($adminList ->num_rows > 0){
+                while($row = $adminList->fetch_assoc()){
+									echo "<tr>";
+									echo "<td>".$row['adminID']."</td>";
+									echo "<td>".$row['username']."</td>";
+									echo "<td>".$row['access']."</td>";
+									echo "<td> <a href = edit_admin.php?username=".$row['username'].">edit</a></td>";
+									echo "</tr>";?>
 
 
           <?php

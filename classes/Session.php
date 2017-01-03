@@ -16,6 +16,7 @@ class Session{
   {
     return $_SESSION[$name];
   }
+
   public static function flash($name, $pesan = '')
   {
     if(self::exist($name)){
@@ -33,7 +34,6 @@ class Session{
       unset($_SESSION[$name]);
     }
   }
-
 
 }
  ?>
