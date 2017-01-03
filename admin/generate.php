@@ -1,6 +1,6 @@
 <?php
 include_once '../assets/adminHeader.php';
-include_once $_SERVER['DOCUMENT_ROOT']."/FinalProjectOOP/core/init_inside.php";
+include_once '../core/init_inside.php';
 
 if(!$_admin->is_LoggedIn()){
     header('location: adminLogin.php');

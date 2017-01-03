@@ -2,10 +2,10 @@
 
 require_once $_SERVER['DOCUMENT_ROOT']."/core/init_inside.php";
 
-if(!$_student->is_LoggedIn()){
+if(!$student->is_LoggedIn()){
     header('location: ../login.php');
 }
-$user_data = $_student->get_data(session::get('username'));
+$user_data = $student->get_data(Session::get('username'));
 $nominal = $_admin->get_nominal(Input::get('voucher'));
 
 
@@ -28,13 +28,12 @@ if(Input::get('submit')){
 
     if($_admin->cek_voucher(Input::get('voucher'))){
       $_admin->insert_top_up(array(
-        'topupID'       => null,
         'nim'           => $user_data['nim'],
         'wallet_code'   => Input::get('voucher'),
         'nominal'       => $nominal
       ));
 
-      $_student->update_student(array(
+      $student->update_student(array(
         'walletBalance' => $user_data['walletBalance'] + $nominal
       ),$user_data['nim']);
 

@@ -2,7 +2,7 @@
 
 require_once $_SERVER['DOCUMENT_ROOT']."/core/init_inside.php";
 
-if(!$_student->is_LoggedIn()){
+if(!$student->is_LoggedIn()){
     header('location: ../login.php');
 }
 
@@ -43,7 +43,7 @@ require_once "../templates/header_student.php";
                 while($row = $result->fetch_assoc()){ ?>
                   <div class="col-md-4 img-portfolio">
                       <a href="<?php echo 'event_details.php?eventID='.$row['eventID']; ?>">
-                          <img class="img-responsive img-hover" src="<?php echo '../assets/img/event/'.$row['imagePath'].'.jpg';?>" alt="">
+                          <img class="img-responsive img-hover" src="<?php echo '../assets/img/event/'.$row['imagePath'];?>" alt="">
                       </a>
                       <h3>
                           <a href="<?php echo 'event_details.php?eventID='.$row['eventID']; ?>"><?php echo $row['eventName']; ?></a>

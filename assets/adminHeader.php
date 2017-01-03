@@ -34,7 +34,6 @@
 
 <body>
   <script src="../assets/js/script.js" charset="utf-8"></script>
-  <script src="../assets/js/ajaxTest.js" charset="utf-8"></script>
     <div id="wrapper">
 
         <!-- Navigation -->

@@ -1,5 +1,5 @@
 <?php
-  require_once "core/init.php";
+  require_once $_SERVER['DOCUMENT_ROOT']."/core/init.php";
 
   $errors = array();
 
@@ -24,7 +24,7 @@
       if($student->cek_name(Input::get('username'))){
         if($student->login_student(Input::get('username'), Input::get('password')))
         {
-          session::set('username', Input::get('username'));
+          Session::set('username', Input::get('username'));
           Redirect::to('student/student_page');
 
         }else{
@@ -33,7 +33,7 @@
       }elseif ($_club->cek_name(Input::get('username'))) {
         if($_club->login_club(Input::get('username'), Input::get('password')))
         {
-          session::set('username', Input::get('username'));
+          Session::set('username', Input::get('username'));
           Redirect::to('club/club_page');
 
         }else{

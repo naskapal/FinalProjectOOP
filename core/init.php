@@ -8,5 +8,6 @@ spl_autoload_register(function($class){
 });
 
 $_db = new Database();
-$_student = new Student();
+$student = new Student();
+$_club = new Club();
  ?>

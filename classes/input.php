@@ -1,19 +1,13 @@
 <?php
 
-class Input
-{
-  public static function get($name)
+class Input{
+
+  public static function get($value)
   {
-    if (isset($_POST[$name]))
-    {
-      return $_POST[$name];
-    }
-    else if (isset($_GET[$name]))
-    {
-      return $_GET[$name];
-    }
-    else {
-      return false;
+    if(isset($_POST[$value])){
+      return $_POST[$value];
+    }else if(isset($_GET[$value])){
+      return $_GET[$value];
     }
   }
 }

@@ -2,10 +2,10 @@
 
 require_once $_SERVER['DOCUMENT_ROOT']."/core/init_inside.php";
 
-if(!$_student->is_LoggedIn()){
+if(!$student->is_LoggedIn()){
     header('location: ../login.php');
 }
-$user_data = $_student->get_data(session::get('username'));
+$user_data = $student->get_data(Session::get('username'));
 $errors = array();
 
 if(Input::get('submit')){
@@ -31,7 +31,7 @@ if(Input::get('submit')){
 
     if(password_verify(Input::get('password'),$user_data['password'])){
 
-      $_student->update_student(array(
+      $student->update_student(array(
         'password' => password_hash(Input::get('new_password'),PASSWORD_DEFAULT)
       ),$user_data['nim']);
 

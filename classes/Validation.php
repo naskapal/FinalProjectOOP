@@ -27,6 +27,11 @@ class Validation{
                   $this->addError($item,"$item must be filled");
                 }
                 break;
+              case 'match':
+                if(Input::get($item) != Input::get($rule_value)){
+                  $this->addError($item,"$item must same with $rule_value ");
+                }
+                break;
               default:
                 # code...
                 break;

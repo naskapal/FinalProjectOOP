@@ -2,7 +2,7 @@
 
 require_once $_SERVER['DOCUMENT_ROOT']."/core/init_inside.php";
 
-if(!$_student->is_LoggedIn()){
+if(!$student->is_LoggedIn()){
     header('location: ../login.php');
 }
 

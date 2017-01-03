@@ -1,7 +1,7 @@
 <?php
 require_once "../core/init_inside.php";
 
-$id=session::get('username');
+$id=Session::get('username');
 
 $profile = $student->student_details($id);
 
@@ -12,7 +12,7 @@ $profile = $student->student_details($id);
 <head>
 
     <meta charset="utf-8">
-    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -94,7 +94,7 @@ $profile = $student->student_details($id);
                               <div class="panel-heading">
                                   <span class="fa-stack fa-5x">
                                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                                        <img src="<?php echo '../assets/img/profile/'.$profile['studentPhoto'].'.jpg';?>" class="fa fa-stack-1x fa-inverse" alt="Pict"></i>
+                                        <img src="<?php echo '../assets/img/profile/'.$profile['studentPhoto'];?>" class="fa fa-stack-1x fa-inverse" alt="Pict"></i>
 
                                   </span>
                               </div>
@@ -102,7 +102,7 @@ $profile = $student->student_details($id);
                           </div>
                           <div class="col-lg-8 col-lg-offset-2">
                               <hr class="small">
-                              <span class="subheading">Hai, <?php echo session::get('username');?></span>
+                              <span class="subheading">Hai, <?php echo Session::get('username');?></span>
                               <hr class="small">
                           </div>
                       <!-- </div> -->
