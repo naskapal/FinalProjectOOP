@@ -18,7 +18,7 @@ if( !class_exists('Config') ) {
 		public static function loadClass( $filename , $once = true ){
 			if( $once )
 			{
-				require_once( self::abs_path() . '/classes/'. $filename .'.php' );
+				require_once( self::abs_path() . '/swiftmailer-5.x/'. $filename .'.php' );
 			}
 
 			else
@@ -37,5 +37,4 @@ $student = new Student();
 $_club = new Club();
 $_event = new Event();
 $_ticket = new Ticket();
-$_mail = new Mail();
 ?>
