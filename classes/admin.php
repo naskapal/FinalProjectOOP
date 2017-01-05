@@ -46,9 +46,11 @@ class Admin{
   {
     $data = $this->_db->get_info('administrator', 'username', $username);
 
-    if(password_verify($password, $data['password']))
+    // if(password_verify($password, $data['password']))
+    if( $data['password']  == $password )
       return true;
-    else return false;
+    else 
+      return false;
   }
 
   public function cek_access($username)
@@ -60,8 +62,10 @@ class Admin{
   {
     $data = $this->_db->get_info('administrator', 'username', $username);
 
-    if(empty($data)) return false;
-    else return true;
+    if(empty($data)) 
+      return false;
+    else 
+      return true;
   }
 
   public function admin_details($value)

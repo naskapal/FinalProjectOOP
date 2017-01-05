@@ -27,6 +27,8 @@ require('../config.php');
           Session::set('username', Input::get('username'));
           header('location: admin-page.php');
         }else{
+          // echo Input::get('username') . ' / ' . Input::get('password');
+          // exit();
           echo "<script>alert('Login Failed');</script>";
         }
       }

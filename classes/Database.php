@@ -9,7 +9,7 @@ class Database
   private $mysqli,
           $HOST   = 'localhost',
           $USER   = 'root',
-          $PASS   = 'BerthaAvelia',
+          $PASS   = '',
           $DBNAME = 'SCEM2';
 
   function __construct()
@@ -140,7 +140,8 @@ class Database
 
     $query = "SELECT * FROM $table WHERE $column = $value";
     $result = $this->mysqli->query($query);
-    while($row = $result->fetch_assoc())
+    
+    while( $row = $result->fetch_assoc() )
     {
       return $row;
     }
