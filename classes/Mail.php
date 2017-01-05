@@ -1,5 +1,4 @@
 <?php
-  require_once $_SERVER['DOCUMENT_ROOT'].'/swiftmailer-5.x/lib/swift_required.php';
 class Mail
 {
   public function sendTest($username, $password, $destination)
@@ -21,4 +20,4 @@ class Mail
 }
 $_mail = new Mail();
 $_mail->sendTest();
- ?>
+?>
