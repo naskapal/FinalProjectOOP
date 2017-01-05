@@ -46,7 +46,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="admin-page.php">SB Admin</a>
+                <a class="navbar-brand" href="index.html">SB Admin</a>
             </div>
 
 
@@ -55,22 +55,13 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
-                        <a href="admin-page.php"><i class="fa fa-fw fa-dashboard"></i> Administrator</a>
+                        <a href="academic-hello.php"><i class="fa fa-fw fa-dashboard"></i>Academic</a>
                     </li>
                     <li>
-                        <a href="admin-page.php?cek=user"><i class="fa fa-fw fa-table"></i> Manage User</a>
+                        <a href="viewStudents.php"><i class="fa fa-fw fa-table"></i>View Users</a>
                     </li>
                     <li>
-                        <a href="admin-page.php?cek=event"><i class="fa fa-fw fa-table"></i> View Event</a>
-                    </li>
-                    <li>
-                        <a href="admin-page.php?cek=generate"><i class="fa fa-fw fa-table"></i> Generate Voucher</a>
-                    </li>
-                    <li>
-                        <a href="admin-page.php?cek=trans"><i class="fa fa-fw fa-table"></i> Ticket Transaction</a>
-                    </li>
-                    <li>
-                        <a href="logout.php"><i class="fa fa-fw fa-table"></i> Logout</a>
+                        <a href="logout.php"><i class="fa fa-fw fa-table"></i>Logout</a>
                     </li>
 
                 </ul>

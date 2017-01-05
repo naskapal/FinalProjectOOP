@@ -47,7 +47,7 @@ if(Input::get('submit')){
   }
 }//end submit
 
-require_once "../templates/header_student.php";
+require_once "../templates/header_club.php";
  ?>
 
 <h2>Hai <?php echo $user_data['username'];?></h2>

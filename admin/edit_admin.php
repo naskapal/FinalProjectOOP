@@ -1,7 +1,7 @@
 <?php require('../config.php');
 include_once '../assets/adminHeader.php';
 if(!$_admin->is_LoggedIn()){
-    header('location: adminLogin.php');
+    header('location: index.php');
 }
   $adminDetails = $_admin->admin_details(Input::get('username'));
 ?>

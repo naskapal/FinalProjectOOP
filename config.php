@@ -1,6 +1,7 @@
 <?php
 session_start();
 @define('MYFOLDER_PATH' , dirname(__FILE__));
+// require_once 'swiftmailer-5.x/lib/swift_required.php';
 
 if( !class_exists('Config') ) {
 	class Config{
@@ -45,6 +46,7 @@ if( !class_exists('System') ){
 		private function __clone(){}
 
 		private function __construct(){}
+
 	}
 }
 

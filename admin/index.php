@@ -20,21 +20,36 @@
                   )
     ));
 
-    if($validation->passed()){
-      if($_admin->cek_name(Input::get('username'))){
+    if($validation->passed())
+    {
+      if($_admin->cek_name(Input::get('username')))
+      {
         if($_admin->login_admin(Input::get('username'), Input::get('password')))
         {
           Session::set('username', Input::get('username'));
-          header('location: admin-hello.php');
-        }else{
+
+          $result = $_admin->cek_access(Input::get('username'));
+          if ($result['access'] == "admin")
+          {
+            header('location: admin-page.php');
+          }
+          else
+          {
+            header('location: academic-hello.php');
+          }
+        }
+        else
+        {
           echo "<script>alert('Login Failed');</script>";
         }
       }
-        else{
+        else
+        {
           echo "<script>alert('Username not registered');</script>";
         }
-
-    }else {
+    }
+    else
+    {
       $errors = $validation->errors();
     }
   }

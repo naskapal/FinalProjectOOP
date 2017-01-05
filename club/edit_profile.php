@@ -48,7 +48,7 @@ if(Input::get('submit')){
   }
 }//end submit
 
-require_once $_SERVER['DOCUMENT_ROOT']."/templates/header_student.php";
+require_once $_SERVER['DOCUMENT_ROOT']."/templates/header_club.php";
  ?>
 
 <div class="row">
