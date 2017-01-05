@@ -1,9 +1,7 @@
 <?php
-include_once '../assets/adminHeader.php';
-include_once '../core/init_inside.php';
-
+require('../config.php');
 if(!$_admin->is_LoggedIn()){
-    header('location: adminLogin.php');
+    header('location: index.php');
 }
 
 if (Input::get('generate'))
@@ -24,7 +22,23 @@ if (Input::get('generate'))
 }
 
  ?>
- <form action="generate.php" method="post">
+
+ <!-- Page Heading/Breadcrumbs -->
+ <div class="row">
+     <div class="col-lg-12">
+         <h1 class="page-header">Generate Code
+         </h1>
+         <ol class="breadcrumb">
+             <li><a href="index.html">Home</a>
+             </li>
+             <li class="active">Generate Code</li>
+         </ol>
+     </div>
+ </div>
+
+
+
+ <form action="admin-page.php?cek=generate" method="post">
    <select name="nominal">
      <option value=10000>10000</option>
      <option value="25000">25000</option>

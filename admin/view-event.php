@@ -13,7 +13,7 @@
 
 <?php
 if(!$_admin->is_LoggedIn()){
-    header('location: adminLogin.php');
+    header('location: index.php');
 }
   $eventList = $_event->event_list();
 	$apostrophe = "";

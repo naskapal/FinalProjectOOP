@@ -1,7 +1,7 @@
 </form>
 <table align="center" border="1" class="table table-bordered table-hover">
 <tr>
-	<th colspan="5" align="center">Event Data</th>
+	<th colspan="5" align="center">Admin Data</th>
 </tr>
 <tr>
 	<td><strong>Admin ID</strong></td>
@@ -12,9 +12,10 @@
 
 <?php
 if(!$_admin->is_LoggedIn()){
-    header('location: adminLogin.php');
+    header('location: index.php');
 }
   $adminList = $_admin->admin_list();
+	$club = $_admin->club_list()
 ?>
 
 <!-- Page Content -->
@@ -52,3 +53,33 @@ if(!$_admin->is_LoggedIn()){
                 }
               }
           ?>
+
+					<table align="center" border="1" class="table table-bordered table-hover">
+					<tr>
+						<th colspan="5" align="center">Club Data</th>
+					</tr>
+					<tr>
+						<td><strong>Club ID</strong></td>
+						<td><strong>Club Name</strong></td>
+					    <td><strong>username</strong></td>
+					</tr>
+
+					<?php
+              if($club ->num_rows > 0){
+                while($row = $club->fetch_assoc()){
+									echo "<tr>";
+									echo "<td>".$row['club_id']."</td>";
+									echo "<td>".$row['club_name']."</td>";
+									echo "<td>".$row['username']."</td>";
+									echo "</tr>";
+
+									?>
+          <?php
+                }
+              }
+          ?>
+					<div class="row">
+						<div class="col-xs-12 col-md-3 col-md-offset-10">
+							<a class="btn btn-default" href="addClub.php" role="button">Add New Club</a>
+						</div>
+					</div>

@@ -17,10 +17,8 @@ class Admin{
 
   public function update_admin($fields = array(), $id)
   {
-    if($this->_db->update('administrator', $fields, $id, 'username')) 
-      return true;
-    else 
-      return false;
+    if($this->_db->update('administrator', $fields, $id, 'username')) return true;
+    else return false;
   }
 
   public function is_LoggedIn()
@@ -34,16 +32,28 @@ class Admin{
     return $this->_db->select('administrator');
   }
 
+  public function student_list()
+  {
+    return $this->_db->select('student');
+  }
+
+  public function club_list()
+  {
+    return $this->_db->select('club');
+  }
+
   public function login_admin($username, $password)
   {
     $data = $this->_db->get_info('administrator', 'username', $username);
 
-
-    // if(password_verify($password, $data['password']))
-    if( $password == $data['password'] )
+    if(password_verify($password, $data['password']))
       return true;
-    else 
-      return false;
+    else return false;
+  }
+
+  public function cek_access($username)
+  {
+    return $this->_db->get_info('administrator', 'username', $username);
   }
 
   public function cek_name($username)
@@ -107,6 +117,11 @@ class Admin{
   public function insert_top_up($fields = array())
   {
     if($this->_db->insert('topup', $fields)) return true;
+    else return false;
+  }
+  public function insert_new_club($fields = array())
+  {
+    if($this->_db->insert('club', $fields)) return true;
     else return false;
   }
 

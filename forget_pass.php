@@ -1,5 +1,6 @@
 <?php
   require_once "config.php";
+  require MYFOLDER_PATH . '/swiftmailer-5.x/lib/swift_required.php';
 
   $errors = array();
 

@@ -41,10 +41,11 @@ if(Input::get('submit')){
           $_event->post_event(array(
             'eventID' => Input::get('eventID'),
             'eventName' => Input::get('eventName'),
-            'eventDesc' => Input::get('eventDesc'),
+            'eventDesc' => Input::get('shortDesc'),
             'clubID' => $clubID,
             'point' => Input::get('point'),
-            'imagePath' => $name
+            'imagePath' => $name,
+            'desc_detail' => Input::get('eventDesc')
           ));
 
           $count = Input::get('quantity');
@@ -106,10 +107,15 @@ require_once "../templates/header_club.php";
            <input type="file" class="form-control"  name="image">
          </div>
 
+         <div class="form-group">
+           <label>Short Description</label>
+           <input class="form-control" placeholder="Short Description" name="shortDesc">
+         </div>
+
          <div class="control-group form-group">
             <div class="controls">
               <label>Description</label>
-              <textarea rows="10" cols="100" class="form-control" name="description"  maxlength="999" style="resize:none"></textarea>
+              <textarea rows="10" cols="100" class="form-control" name="eventDesc"  maxlength="999" style="resize:none"></textarea>
             </div>
          </div>
 

@@ -30,7 +30,7 @@ require_once "../templates/header_student.php";
                           <div class="panel-heading">
                               <span class="fa-stack fa-5x">
                                     <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                                    <img src="<?php echo '../assets/img/club/'.$row['imagepath'].'.png';?>" class="fa fa-stack-1x fa-inverse"></i>
+                                    <img src="<?php echo '../assets/img/club/'.$row['imagepath'];?>" class="fa fa-stack-1x fa-inverse"></i>
 
                               </span>
                           </div>

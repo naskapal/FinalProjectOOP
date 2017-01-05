@@ -13,7 +13,7 @@
 <?php
   $ticketTransList = $_ticket->ticketTrans_list();
 	if(!$_admin->is_LoggedIn()){
-	    header('location: adminLogin.php');
+	    header('location: index.php');
 	}
 ?>
 

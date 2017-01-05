@@ -89,7 +89,7 @@ $profile = $_club->club_details_profile($id);
                               <div class="panel-heading">
                                   <span class="fa-stack fa-5x">
                                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                                        <img src="<?php echo '../assets/img/club/'.$profile['imagepath'].'.png';?>" class="fa fa-stack-1x fa-inverse" alt="Pict"></i>
+                                        <img src="<?php echo '../assets/img/club/'.$profile['imagepath'];?>" class="fa fa-stack-1x fa-inverse" alt="Pict"></i>
 
                                   </span>
                               </div>

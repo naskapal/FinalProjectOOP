@@ -2,7 +2,7 @@
 require('../config.php');
 
 if(!$_admin->is_LoggedIn()){
-    header('location: adminLogin.php');
+    header('location: index.php');
 }
 
 if (Input::get('eventID')!= null) {

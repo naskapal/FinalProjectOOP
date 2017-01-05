@@ -2,7 +2,7 @@
 require('../config.php');
 
 if(!$_admin->is_LoggedIn()){
-    header('location: adminLogin.php');
+    header('location: index.php');
 }
 
 if (Input::get("editAdmin") != null)
@@ -11,8 +11,8 @@ if (Input::get("editAdmin") != null)
 
   if ($_admin->update_admin( $editedValues , Input::get('username')))
   {
-    echo "<script> 
-    	alert('Edit Success'); 
+    echo "<script>
+    	alert('Edit Success');
     	location.href = 'admin-page.php?cek=user';
     </script>";
   }else{

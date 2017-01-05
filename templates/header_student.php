@@ -92,11 +92,7 @@ $profile = $student->student_details($id);
                       <!-- <div class="col-md-3 col-sm-6 col-md-offset-3"> -->
                           <div class="panel panel-default text-center col-lg-4 col-sm-6 col-lg-offset-4 clearfix">
                               <div class="panel-heading">
-                                  <span class="fa-stack fa-5x">
-                                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                                        <img src="<?php echo '../assets/img/profile/'.$profile['studentPhoto'];?>" class="fa fa-stack-1x fa-inverse" alt="Pict"></i>
-
-                                  </span>
+                                <img class="img-responsive img-hover center-block" src="<?php echo '../assets/img/profile/'.$profile['studentPhoto'];?>" alt="gambar">
                               </div>
 
                           </div>

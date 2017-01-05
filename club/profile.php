@@ -35,7 +35,7 @@ require_once $_SERVER['DOCUMENT_ROOT']."/templates/header_club.php";
 
            <div class="col-md-4">
 
-               <img class="img-responsive img-hover center-block" src="<?php echo '../assets/img/club/'.$profile['imagepath'].'.png'; ?>" alt="gambar">
+               <img class="img-responsive img-hover center-block" src="<?php echo '../assets/img/club/'.$profile['imagepath']; ?>" alt="gambar">
 
            </div>
 
