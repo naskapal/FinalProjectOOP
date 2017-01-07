@@ -143,7 +143,8 @@ class Database
     // die($query);
 
     $result = $this->mysqli->query($query);
-    while($row = $result->fetch_assoc())
+    
+    while( $row = $result->fetch_assoc() )
     {
       return $row;
     }

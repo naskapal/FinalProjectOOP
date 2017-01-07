@@ -1,7 +1,4 @@
 <?php
-
-require('../config.php');
-
 if(!$_admin->is_LoggedIn()){
     header('location: index.php');
 }

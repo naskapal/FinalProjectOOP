@@ -24,7 +24,9 @@
     {
       if($_admin->cek_name(Input::get('username')))
       {
-        if($_admin->login_admin(Input::get('username'), Input::get('password')))
+        $query = $_admin->login_admin(Input::get('username'), Input::get('password'));
+        var_dump($query);
+        if($query)
         {
           Session::set('username', Input::get('username'));
 
@@ -40,6 +42,8 @@
         }
         else
         {
+          echo Input::get('username') . ' / ' . Input::get('password') . ' / ' . $query;
+          exit();
           echo "<script>alert('Login Failed');</script>";
         }
       }
