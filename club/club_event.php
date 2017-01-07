@@ -38,11 +38,11 @@ require_once "../templates/header_club.php";
                if($result ->num_rows > 0){
                  while($row = $result->fetch_assoc()){ ?>
                    <div class="col-md-4 img-portfolio">
-                       <a href="<?php echo 'event_details.php?eventID='.$row['eventID']; ?>">
+                       <a href="<?php echo 'edit_event.php?eventID='.$row['eventID']; ?>">
                            <img class="img-responsive img-hover" src="<?php echo '../assets/img/event/'.$row['imagePath'];?>" alt="">
                        </a>
                        <h3>
-                           <a href="<?php echo 'event_details.php?eventID='.$row['eventID']; ?>"><?php echo $row['eventName']; ?></a>
+                           <a href="<?php echo 'edit_event.php?eventID='.$row['eventID']; ?>"><?php echo $row['eventName']; ?></a>
                        </h3>
                        <p><?php echo $row['eventDesc']; ?></p>
                    </div>

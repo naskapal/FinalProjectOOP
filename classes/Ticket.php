@@ -14,6 +14,11 @@ class Ticket
       return $this->_db->select('tickettrans');
     }
 
+    public function ticket_detail($id)
+    {
+      return $this->_db->get_info('tickettrans', 'transID', $id);
+    }
+
   }
 
 

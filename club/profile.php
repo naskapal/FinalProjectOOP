@@ -42,8 +42,10 @@ require_once $_SERVER['DOCUMENT_ROOT']."/templates/header_club.php";
            <div class="col-md-8">
                <h3>Profile Information</h3>
                <ul>
-                   <li>Name : <?php echo $profile['club_name']; ?></li>
-                   <li>Description : <?php echo $profile['club_desc']; ?></li>
+                   <li><strong>Name : </strong><?php echo $profile['club_name']; ?></li>
+                   <li><p class="text-justify"><strong>Short Description :</strong> <?php echo $profile['short_desc']; ?></p></li>
+                   <li><p class="text-justify"><strong>Description :</strong> <?php echo $profile['club_desc']; ?></p></li>
+
                </ul>
            </div>
 

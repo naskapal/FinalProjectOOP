@@ -37,6 +37,16 @@ class Student{
     return $this->_db->get_info('student','username',$value);
   }
 
+  public function club_list()
+  {
+    return $this->_db->select('club');
+  }
+  public function get_tickets($id)
+  {
+    $value = 'nim = "'.$id.'"';
+    return  $this->_db->select('tickettrans','*',NULL, $value, NULL, NULL,NULL);
+  }
+
   public function is_LoggedIn()
   {
     if(Session::exist('username')) return true;

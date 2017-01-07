@@ -9,6 +9,7 @@ $id         = $_GET['eventID'];
 $user_data  = $student->get_data(Session::get('username'));
 $data       = $_event->event_details($id);
 $ticket     = $_event->ticket_details($id);
+$price      = $_event->get_price($id);
 
 
 if(Input::get('submit'))
@@ -21,7 +22,7 @@ if(Input::get('submit'))
   else {
     if($student->cek_transaction($user_data['nim'],$data['eventID']))
     {
-          echo "<script>alert('You already buy the ticket')</script>";
+          echo "<script>alert('You already bought the ticket')</script>";
     }
     else{
       if($user_data['walletBalance'] >= $nominal )
@@ -41,8 +42,13 @@ if(Input::get('submit'))
         ));
 
           $_admin->delete_ticket($ticket['ticketID']);
-
-          Redirect::to('profile');
+          echo "<script>alert('Ticket purchase successful'); location.href = 'profile.php';</script>"; //php redirect
+          // echo "<script>
+          // if(alert('Ticket purchase successful').closed)
+          // {
+          //   Redirect::to('profile');
+          // }
+          // </script>";
       }else {
         echo "<script>alert('Your Wallet is not enough')</script>";
       }//end cek balance
@@ -84,6 +90,9 @@ require_once "../templates/header_student.php";
            <div class="col-md-4">
                <h3>Event Description</h3>
                <p class="text-justify"><?php echo $data['desc_detail'];?></p>
+
+                <h3>Ticket Price</h3>
+                <p class="text-justify"><?php if(empty($price)) { echo "SOLD OUT"; } else echo "Rp." .$price;?></p>
 
                <form action="event_details.php?eventID=<?php echo $data['eventID'];?>" method="POST">
                  <input type="submit" name="submit" value="Buy Ticket" class="btn btn-default">

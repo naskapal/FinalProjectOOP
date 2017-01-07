@@ -53,7 +53,7 @@ $profile = $student->student_details($id);
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">SCEMS</a>
+                <a class="navbar-brand" href="profile.php">SCEMS</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->

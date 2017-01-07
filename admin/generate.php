@@ -42,6 +42,8 @@ if (Input::get('generate'))
    <select name="nominal">
      <option value=10000>10000</option>
      <option value="25000">25000</option>
+     <option value="25000">50000</option>
+     <option value="25000">100000</option>
    </select>
    <input type="submit" name="generate" value="generate">
  </form>

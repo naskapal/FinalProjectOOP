@@ -1,4 +1,4 @@
-</form>
+
 <table align="center" border="1" class="table table-bordered table-hover">
 <tr>
 	<th colspan="5" align="center">Admin Data</th>
@@ -78,8 +78,9 @@ if(!$_admin->is_LoggedIn()){
                 }
               }
           ?>
-					<div class="row">
-						<div class="col-xs-12 col-md-3 col-md-offset-10">
-							<a class="btn btn-default" href="addClub.php" role="button">Add New Club</a>
-						</div>
 					</div>
+						<hr>
+						<div class="pull-right">
+							<a class="btn btn-primary" href="addClub.php" role="button">Add New Club</a>
+						</div>
+						

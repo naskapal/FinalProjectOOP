@@ -68,6 +68,19 @@ class Event{
     else return true;
   }
 
+  public function update_event($fields, $id)
+    {
+      if($this->_db->update('event', $fields, $id, 'eventID')) return true;
+      else return false;
+    }
+
+    public function update_ticket($fields, $id)
+      {
+        if($this->_db->update('ticket', $fields, $id, 'eventID')) return true;
+        else return false;
+      }
+
+
 }
 
  ?>

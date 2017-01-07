@@ -41,7 +41,7 @@ require_once "../templates/header_student.php";
           <?php
               if($result ->num_rows > 0){
                 while($row = $result->fetch_assoc()){ ?>
-                  <div class="col-md-4 img-portfolio">
+                  <div class="col-md-4 img-portofolio">
                       <a href="<?php echo 'event_details.php?eventID='.$row['eventID']; ?>">
                           <img class="img-responsive img-hover" src="<?php echo '../assets/img/event/'.$row['imagePath'];?>" alt="">
                       </a>
@@ -66,33 +66,7 @@ require_once "../templates/header_student.php";
        <hr>
 
        <!-- Pagination -->
-       <div class="row text-center">
-           <div class="col-lg-12">
-               <ul class="pagination">
-                   <li>
-                       <a href="#">&laquo;</a>
-                   </li>
-                   <li class="active">
-                       <a href="#">1</a>
-                   </li>
-                   <li>
-                       <a href="#">2</a>
-                   </li>
-                   <li>
-                       <a href="#">3</a>
-                   </li>
-                   <li>
-                       <a href="#">4</a>
-                   </li>
-                   <li>
-                       <a href="#">5</a>
-                   </li>
-                   <li>
-                       <a href="#">&raquo;</a>
-                   </li>
-               </ul>
-           </div>
-       </div>
+
        <!-- /.row -->
 
        <hr>

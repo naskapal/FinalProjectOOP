@@ -36,7 +36,7 @@ require_once "../templates/header_student.php";
                           </div>
                           <div class="panel-body">
                               <h4><?php echo $row['club_name']; ?></h4>
-                              <p><?php echo $row['club_desc']; ?></p>
+                              <p><?php echo $row['short_desc']; ?></p>
                               <a href="<?php echo 'club_details.php?club_id='.$row['club_id']; ?>" class="btn btn-primary">Learn More</a>
                           </div>
                       </div>

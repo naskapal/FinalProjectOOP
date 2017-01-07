@@ -39,6 +39,7 @@ require('config.php');
             $student->register_student(array(
               'NIM' => Input::get('NIM'),
               'name' => Input::get('name'),
+              'email' => Input::get('email'),
               'username' => Input::get('username'),
               'password' => password_hash(Input::get('password'),PASSWORD_DEFAULT),
               'address' => Input::get('address'),
@@ -75,6 +76,11 @@ require('config.php');
         <div class="form-group">
           <label>Full Name</label>
           <input class="form-control" placeholder="Full Name" name="name">
+        </div>
+
+        <div class="form-group">
+          <label>Email</label>
+          <input class="form-control" placeholder="Email" name="email">
         </div>
 
         <div class="form-group">

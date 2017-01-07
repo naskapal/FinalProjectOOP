@@ -42,7 +42,8 @@ require_once "../templates/header_student.php";
 
            <div class="col-md-6">
                <h3>Club Description</h3>
-               <p class="text-justify"><<?php echo $data['club_desc']; ?></p>
+               <p class="text-justify"><?php echo $data['club_desc']; ?></p>
+    
            </div>
 
        </div>

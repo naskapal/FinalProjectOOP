@@ -36,6 +36,7 @@ if(Input::get('submit')){
       $_club->update_club(array(
         'club_name' => Input::get('club_name'),
         'username' => Input::get('username'),
+        'short_desc' => Input::get('short_desc'),
         'club_desc' => Input::get('club_desc'),
         'imagepath' => $name
       ),$user_data['club_id']);
@@ -64,12 +65,17 @@ require_once $_SERVER['DOCUMENT_ROOT']."/templates/header_club.php";
 
         <div class="form-group">
           <label>Username</label>
-          <input class="form-control"  name="username" type="text" value="<?php echo $user_data['username'] ?>">
+          <input class="form-control"  name="username" type="text" value="<?php echo $user_data['username'] ?>" readonly>
+        </div>
+
+        <div class="form-group">
+          <label>Short Description</label>
+          <input class="form-control"  name="short_desc" type="text" value="<?php echo $user_data['short_desc'] ?>">
         </div>
 
         <div class="form-group">
           <label>Club Description</label>
-          <input class="form-control" name="club_desc" type="text" value="<?php echo $user_data['club_desc'] ?>">
+          <textarea class="form-control" rows="10" name="club_desc" type="text"><?php echo $user_data['club_desc'] ?></textarea>
         </div>
 
         <div class="form-group">
