@@ -1,4 +1,5 @@
 <?php
+
 class Mail
 {
   public function sendTest($username, $password, $destination)
@@ -18,7 +19,4 @@ class Mail
     $mailer->send($message);
   }
 }
-
-// $_mail = new Mail();
-// $_mail->sendTest();
-?>
+ ?>
