@@ -10,50 +10,59 @@ $user_data  = $student->get_data(Session::get('username'));
 $data       = $_event->event_details($id);
 $ticket     = $_event->ticket_details($id);
 $price      = $_event->get_price($id);
+$eventDate = $data['date'];
+$currentDate = date("Y-m-d");
+$format = "Y-m-d";
+$date1  = DateTime::createFromFormat($format, $eventDate);
+$date2  = DateTime::createFromFormat($format, $currentDate);
 
 
 if(Input::get('submit'))
 {
-  $nominal = $_event->get_price($id);
-  if(empty($ticket['ticketID']))
-  {
-    echo "<script>alert('Ticket Sold Out')</script>";
-  }
-  else {
-    if($student->cek_transaction($user_data['nim'],$data['eventID']))
-    {
-          echo "<script>alert('You already bought the ticket')</script>";
-    }
-    else{
-      if($user_data['walletBalance'] >= $nominal )
-      {
-        $point = $_event->get_point($id);
+  if($date1 < $date2){
+    echo "<script>alert('Event is Inactive')</script>";
+  }else{
+        $nominal = $_event->get_price($id);
+        if(empty($ticket['ticketID']))
+        {
+          echo "<script>alert('Ticket Sold Out')</script>";
+        }
+        else {
+          if($student->cek_transaction($user_data['nim'],$data['eventID']))
+          {
+                echo "<script>alert('You already bought the ticket')</script>";
+          }
+          else{
+            if($user_data['walletBalance'] >= $nominal )
+            {
+              $point = $_event->get_point($id);
 
-        $student->update_student(array(
-          'walletBalance' => $user_data['walletBalance'] - $nominal,
-          'skkm_point' => $user_data['skkm_point'] + $point
-        ),$user_data['nim']);
+              $student->update_student(array(
+                'walletBalance' => $user_data['walletBalance'] - $nominal,
+                'skkm_point' => $user_data['skkm_point'] + $point
+              ),$user_data['nim']);
 
-        $student->transaction(array(
-          'ticketID'  => $ticket['ticketID'],
-          'transDate' => date("y,m,d"),
-          'nim'       => $user_data['nim'],
-          'eventID'   => $data['eventID']
-        ));
+              $student->transaction(array(
+                'ticketID'  => $ticket['ticketID'],
+                'transDate' => date("y,m,d"),
+                'nim'       => $user_data['nim'],
+                'eventID'   => $data['eventID']
+              ));
 
-          $_admin->delete_ticket($ticket['ticketID']);
-          echo "<script>alert('Ticket purchase successful'); location.href = 'profile.php';</script>"; //php redirect
-          // echo "<script>
-          // if(alert('Ticket purchase successful').closed)
-          // {
-          //   Redirect::to('profile');
-          // }
-          // </script>";
-      }else {
-        echo "<script>alert('Your Wallet is not enough')</script>";
-      }//end cek balance
-    }//end cek already buy
-  }//end sold out
+                $_admin->delete_ticket($ticket['ticketID']);
+                echo "<script>alert('Ticket purchase successful'); location.href = 'profile.php';</script>"; //php redirect
+                // echo "<script>
+                // if(alert('Ticket purchase successful').closed)
+                // {
+                //   Redirect::to('profile');
+                // }
+                // </script>";
+            }else {
+              echo "<script>alert('Your Wallet is not enough')</script>";
+            }//end cek balance
+          }//end cek already buy
+        }//end sold out
+      }//end date checker
 }
 
 require_once "../templates/header_student.php";
@@ -90,6 +99,20 @@ require_once "../templates/header_student.php";
            <div class="col-md-4">
                <h3>Event Description</h3>
                <p class="text-justify"><?php echo $data['desc_detail'];?></p>
+
+               <h3>Event Date</h3>
+               <p class="text-justify"><?php
+
+               if($date1 > $date2)
+               {
+                 echo $data['date'];
+               }
+               else{
+                 echo "Event Inactive";
+               }
+
+               ?>
+             </p>
 
                 <h3>Ticket Price</h3>
                 <p class="text-justify"><?php if(empty($price)) { echo "SOLD OUT"; } else echo "Rp." .$price;?></p>

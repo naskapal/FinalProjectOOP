@@ -14,6 +14,7 @@ if (Input::get('addClub') != null)
                 'username' => Input::get('username'),
                 'password' => password_hash(Input::get('password'),PASSWORD_DEFAULT),
                 'imagepath' => null,
+                'short_desc' => null,
                 'club_desc' => null);
 
   if ($_admin->insert_new_club($club))

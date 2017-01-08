@@ -44,6 +44,7 @@ require_once "../templates/header_student.php";
                <ul>
                    <li>Name : <?php echo $profile['name']; ?></li>
                    <li>Phone Number : <?php echo $profile['phone']; ?></li>
+                   <li>Email : <?php echo $profile['email']; ?></li>
                    <li>address : <?php echo $profile['address']; ?></li>
                    <li>Wallet Balance : <?php echo $profile['walletBalance']; ?></li>
                    <li>SKKM Point :<?php echo $profile['skkm_point']; ?></li>

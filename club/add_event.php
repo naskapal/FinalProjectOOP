@@ -45,7 +45,8 @@ if(Input::get('submit')){
             'clubID' => $clubID,
             'point' => Input::get('point'),
             'imagePath' => $name,
-            'desc_detail' => Input::get('eventDesc')
+            'desc_detail' => Input::get('eventDesc'),
+            'date' => Input::get('date')
           ));
 
           $count = Input::get('quantity');
@@ -100,6 +101,11 @@ require_once "../templates/header_club.php";
          <div class="form-group">
            <label>Point</label>
            <input class="form-control" placeholder="Point" name="point">
+         </div>
+
+         <div class="form-group">
+           <label>Date</label>
+           <input type="date" class="form-control"  name="date">
          </div>
 
          <div class="form-group">

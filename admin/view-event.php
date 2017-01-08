@@ -6,7 +6,7 @@
 <tr>
 	<td><strong>No</strong></td>
     <td><strong>Event Name</strong></td>
-    <td><strong>Image</strong></td>
+    <td><strong>Date</strong></td>
     <td><strong>Description</strong></td>
     <td><strong>Action</strong></td>
 </tr>
@@ -45,9 +45,9 @@ if(!$_admin->is_LoggedIn()){
 									echo "<tr>";
 									echo "<td>".$row['eventID']."</td>";
 									echo "<td>".$row['eventName']."</td>";
-									echo "<td>".$row['imagePath']."</td>";
+									echo "<td>".$row['date']."</td>";
 									echo "<td>".$row['eventDesc']."</td>";
-									echo "<td><a href='#' class='btn-hapus' onclick='return del(\"". $row["eventID"] ."\")'>Hapus</a></td>";?>
+									echo "<td><a href='#' class='btn-hapus' onclick='return del(\"". $row["eventID"] ."\")'>Delete</a></td>";?>
 									<?php	echo "</tr>";?>
 
           <?php

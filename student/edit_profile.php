@@ -40,6 +40,7 @@ if(Input::get('submit')){
         'name' => Input::get('name'),
         'address' => Input::get('address'),
         'phone' => Input::get('phone'),
+        'email' => Input::get('email'),
         'studentPhoto' => $name
       ),$user_data['nim']);
 
@@ -75,6 +76,11 @@ require_once "../templates/header_student.php";
         <div class="form-group">
           <label>Phone Number</label>
           <input class="form-control" name="phone" type="text" value="<?php echo $user_data['phone'] ?>">
+        </div>
+
+        <div class="form-group">
+          <label>Email</label>
+          <input class="form-control" name="email" type="email" value="<?php echo $user_data['email'] ?>">
         </div>
 
         <div class="form-group">
