@@ -1,6 +1,6 @@
 <?php
 require('config.php');
-  
+
   // Config::loadCore('init');
 
   $errors = array();
@@ -77,6 +77,7 @@ require('config.php');
         <div class="form-group">
           <input type="submit" name="submit" value="Login" class="btn btn-default">
           <input type="reset" name="cancel" value="Cancel" class="btn btn-default">
+          <a href="forget_pass.php"><button type="button" name="forgetPass" role="button" class="btn btn-default">Forget Password</button></a>
         </div>
 
 

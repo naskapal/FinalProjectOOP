@@ -24,7 +24,7 @@ require_once "../templates/header_student.php";
                <ol class="breadcrumb">
                    <li><a href="index.html">Home</a>
                    </li>
-                   <li class="active">Profile</li>
+                   <li class="active">Ticket</li>
                </ol>
            </div>
        </div>
@@ -40,7 +40,7 @@ require_once "../templates/header_student.php";
            </div>
 
            <div class="col-md-8">
-               <h3>Profile Information</h3>
+               <h3>Ticket Information</h3>
                <ul>
                    <li>Transaction ID : <?php echo $ticket['transID']; ?></li>
                    <li>Ticket ID : <?php echo $ticket['ticketID']; ?></li>

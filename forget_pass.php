@@ -66,7 +66,7 @@
 
         <div class="form-group">
           <label>Email</label>
-          <input class="form-control" placeholder="Email" name="email" type="password">
+          <input class="form-control" placeholder="Email" name="email" type="text">
         </div>
 
 

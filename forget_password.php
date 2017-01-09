@@ -1,11 +1,8 @@
 <?php
 
-// require_once $_SERVER['DOCUMENT_ROOT']."/FinalProjectOOP/core/init_inside.php";
-// include_once $_SERVER['DOCUMENT_ROOT']."/FinalProjectOOP/classes/Mail.php";
-//
-// private $_db;
-// private $_mail;
-
+require_once "config.php";
+require MYFOLDER_PATH . '/swiftmailer-5.x/lib/swift_required.php';
+include '/assets/header.php';
 
  ?>
 <form action="check_forget_password.php" method="post">

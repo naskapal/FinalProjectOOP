@@ -16,7 +16,7 @@ if (Input::get('generate'))
    	$j = $j + 4;
    	if ($i != 2)
    	{
-   		$savedCode .=" - ";
+   	// 	$savedCode .=" - ";
    	}
    }
 }
@@ -42,8 +42,8 @@ if (Input::get('generate'))
    <select name="nominal">
      <option value=10000>10000</option>
      <option value="25000">25000</option>
-     <option value="25000">50000</option>
-     <option value="25000">100000</option>
+     <option value="50000">50000</option>
+     <option value="100000">100000</option>
    </select>
    <input type="submit" name="generate" value="generate">
  </form>
@@ -51,6 +51,7 @@ if (Input::get('generate'))
 
 <?php
 if (isset($savedCode))
-echo $savedCode;
+// echo $savedCode;
+echo $test;
 include_once '../assets/adminFooter.php';
  ?>
