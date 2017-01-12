@@ -9,7 +9,7 @@ class Database
   private $mysqli,
           $HOST   = 'localhost',
           $USER   = 'root',
-          $PASS   = 'BerthaAvelia',
+          $PASS   = '',
           $DBNAME = 'SCEM2';
 
   function __construct()
