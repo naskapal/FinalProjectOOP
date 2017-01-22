@@ -12,7 +12,7 @@ class Database
           $PASS   = '',
           $DBNAME = 'SCEM2';
 
-  function __construct()
+  private function __construct()
   {
     $this->mysqli = new mysqli($this->HOST, $this->USER, $this->PASS, $this->DBNAME);
     if(mysqli_connect_error())
